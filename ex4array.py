@@ -1,14 +1,15 @@
 notasAluno=[]*5
 somaMedia=0
-alunosMaiorMedia=0
+cont=0
 
 for i in range(len(notasAluno)):
     notasAluno[i]=float(input(f"digite a nota do {i+1} aluno: "))
-    somaMedia+= notasAluno[i]
+for s in range(len(notasAluno)):
+    somaMedia+= notasAluno[s]
+media=somaMedia/len(notasAluno)
+for c in range(len(notasAluno)):
+    if notasAluno[c]> media:
+        cont+=1
+print(f"encontramos {cont} alunos acima da media {media}")
 
-media = somaMedia/len(notasAluno)
-for notas in notasAluno:
-     if notas> media:
-         alunosMaiorMedia+=1
 
-print(f"{media}, {alunosMaiorMedia}")
